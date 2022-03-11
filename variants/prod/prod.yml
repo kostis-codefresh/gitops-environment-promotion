@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: webserver-simple
+        env:
+        - name: ENV_TYPE
+          value: "production"
+        - name: PAYPAL_URL
+          value: "production.paypal.com"          
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+
