@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: webserver-simple
+        env:
+        - name: UI_THEME
+          value: "dark"
+        - name: CACHE_SIZE
+          value: "1024kb"
+        - name: PAGE_LIMIT
+          value: "25"
+        - name: SORTING
+          value: "ascending"    
+        - name: N_BUCKETS
+          value: "42"          

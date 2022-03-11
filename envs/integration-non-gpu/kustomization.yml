@@ -13,4 +13,5 @@ components:
 patchesStrategicMerge:
 - deployment.yml
 - version.yml
+- settings.yml
 
