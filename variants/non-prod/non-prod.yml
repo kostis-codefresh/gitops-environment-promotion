@@ -12,7 +12,7 @@ spec:
         - name: ENV_TYPE
           value: "non-prod"
         - name: PAYPAL_URL
-          value: "staging.paypal.com"
+          value: "staging2.paypal.com"
         - name: DB_USER
           value: "non-prod-user"
         - name: DB_PASSWORD
