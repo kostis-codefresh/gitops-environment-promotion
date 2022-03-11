@@ -10,7 +10,7 @@ spec:
       - name: webserver-simple
         env:
         - name: ENV
-          value: "integration-gpu"
+          value: "load-non-gpu"
         - name: GPU_ENABLED
-          value: "1"
+          value: "0"
       

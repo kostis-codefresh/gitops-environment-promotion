@@ -10,7 +10,7 @@ spec:
       - name: webserver-simple
         env:
         - name: ENV
-          value: "integration-gpu"
+          value: "prod-asia"
         - name: GPU_ENABLED
           value: "1"
       

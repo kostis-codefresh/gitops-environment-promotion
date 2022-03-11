@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: integration
+
+resources:
+- ../../base
+
+components:
+  - ../../variants/non-prod
+
+patchesStrategicMerge:
+- deployment.yml
+- version.yml
+- replicas.yml
+
