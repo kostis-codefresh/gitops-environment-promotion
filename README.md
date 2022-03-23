@@ -3,7 +3,7 @@
 This is an example on how to model Kustomize folders for a GitOps application and promote releases
 between environments.
 
-Read the full blog post. You might want to see the [application source code as well](https://github.com/kostis-codefresh/gitops-promotion-source-code).
+Read the [full blog post](https://codefresh.io/about-gitops/how-to-model-your-gitops-environments-and-promote-releases-between-them/). You might want to see the [application source code as well](https://github.com/kostis-codefresh/gitops-promotion-source-code).
 
 ## Folder structure
 
