@@ -4,4 +4,4 @@ kind: Deployment
 metadata:
   name: simple-deployment
 spec:
-  replicas: 3
+  replicas: 4

@@ -10,9 +10,9 @@ spec:
       - name: webserver-simple
         env:
         - name: UI_THEME
-          value: "light"
+          value: "dark"
         - name: CACHE_SIZE
-          value: "2048kb"
+          value: "4096kb"
         - name: PAGE_LIMIT
           value: "25"
         - name: SORTING
