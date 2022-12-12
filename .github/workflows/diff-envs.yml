@@ -15,9 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout PR
         uses: actions/checkout@v3
         with:
          path: pr
+      - name: Checkout Target of PR
+        uses: actions/checkout@v3
+        with:
+          path: target
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - run: ls -la
+      - run: ls -la pr
+      - run: ls -la target
