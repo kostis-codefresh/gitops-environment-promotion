@@ -30,3 +30,9 @@ jobs:
       - run: ls -la target
       - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes.diff || true
       - run: cat changes.diff
+      - name: comment PR
+        uses: machine-learning-apps/pr-comment@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: changes.diff
