@@ -31,5 +31,8 @@ jobs:
       - run: diff -v
       - run: cat pr/envs/qa/settings.yml
       - run: cat target/envs/qa/settings.yml
+      - run: ls -ld . 
+      - run: touch now.md
+      - run: mkdir lala
       - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes.diff
       - run: cat changes.diff
