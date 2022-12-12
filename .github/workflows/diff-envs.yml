@@ -35,6 +35,6 @@ jobs:
       - run: touch now.md
       - run: mkdir lala
       - run: ls -la
-      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml 
-      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > /tmp/changes.diff
+      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml || true
+      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > /tmp/changes.diff || true
       - run: cat changes.diff
