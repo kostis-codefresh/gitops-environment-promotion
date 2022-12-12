@@ -28,5 +28,8 @@ jobs:
       - run: ls -la
       - run: ls -la pr
       - run: ls -la target
+      - run: diff -v
+      - run: cat pr/envs/qa/settings.yml
+      - run: target/envs/qa/settings.yml
       - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes.diff
       - run: cat changes.diff
