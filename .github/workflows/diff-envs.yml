@@ -1,9 +1,6 @@
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    types: [opened, synchronize]
   workflow_dispatch:
 
 
@@ -18,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+         path: pr
 
       - run: ls -la
