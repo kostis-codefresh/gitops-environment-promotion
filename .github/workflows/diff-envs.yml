@@ -14,7 +14,6 @@ jobs:
   diff-env:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: k8s.gcr.io/kustomize/kustomize:v3.8.7
 
     steps:
       - name: Checkout PR
@@ -33,6 +32,7 @@ jobs:
            ls -la target
       - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes2.diff || true
       - run: |
+           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
            kustomize build pr/envs/qa/ > qa-pr.yml
            kustomize build target/envs/qa/ > qa-target.yml
            diff qa-pr.yml qa-target.yml > changes.diff || true
