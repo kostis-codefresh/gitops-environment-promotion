@@ -39,7 +39,7 @@ jobs:
       - run: |
           cat changes.diff
           wget https://raw.githubusercontent.com/kostis-codefresh/kustomize-github-preview-diff/main/pr-comment-template.txt
-          sed "s/DIFF_HERE/$(cat changes.diff)/" pr-comment-template.txt > comment.txt
+          sed  -e "/DIFF_HERE/{r changes.txt" -e "d}" pr-comment-template.txt > comment.txt
           cat comment.txt
 
 
