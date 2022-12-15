@@ -38,11 +38,11 @@ jobs:
            diff qa-pr.yml qa-target.yml > changes.diff || true
       - run: |
           cat changes.diff
-          echo "<details><summary>Show Output</summary>" >> comment.txt
-          echo "```diff" >> comment.txt
+          echo '<details><summary>Show Output</summary>' >> comment.txt
+          echo '```diff' >> comment.txt
           cat changes.diff >> comment.txt
-          echo "```" >> comment.txt
-          echo "</details>"> comment.txt
+          echo '```'>> comment.txt
+          echo '</details>'> comment.txt
           cat comment.txt
 
 
