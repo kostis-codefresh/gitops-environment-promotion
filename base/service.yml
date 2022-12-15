@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: trivial-go-web-app
+    app: trivial-go-web-app-new
   ports:
     - protocol: TCP
       port: 80
