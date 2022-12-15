@@ -35,7 +35,7 @@ jobs:
            curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
            kustomize build pr/envs/qa/ > qa-pr.yml
            kustomize build target/envs/qa/ > qa-target.yml
-           diff qa-pr.yml qa-target.yml > changes.diff || true
+           diff -C 10 qa-pr.yml qa-target.yml > changes.diff || true
       - run: |
           cat changes.diff
           wget https://raw.githubusercontent.com/kostis-codefresh/kustomize-github-preview-diff/main/pr-comment-template.txt
