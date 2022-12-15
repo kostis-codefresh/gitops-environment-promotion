@@ -36,10 +36,19 @@ jobs:
            kustomize build pr/envs/qa/ > qa-pr.yml
            kustomize build target/envs/qa/ > qa-target.yml
            diff qa-pr.yml qa-target.yml > changes.diff || true
-      - run: cat changes.diff
+      - run: |
+          cat changes.diff
+          echo "<details><summary>Show Output</summary>" >> comment.txt
+          echo "```diff" >> comment.txt
+          cat changes.diff >> comment.txt
+          echo "```" >> comment.txt
+          echo "</details>"> comment.txt
+          cat comment.txt
+
+
       - name: comment PR
         uses: machine-learning-apps/pr-comment@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: changes.diff
+          path: comment.txt
