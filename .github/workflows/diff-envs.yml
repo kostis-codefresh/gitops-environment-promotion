@@ -27,10 +27,15 @@ jobs:
           path: target
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - run: ls -la
-      - run: ls -la pr
-      - run: ls -la target
-      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes.diff || true
+      - run: |
+           ls -la
+           ls -la pr
+           ls -la target
+      - run: diff pr/envs/qa/settings.yml target/envs/qa/settings.yml > changes2.diff || true
+      - run: |
+           kustomize build pr/envs/qa/ > qa-pr.yml
+           kustomize build target/envs/qa/ > qa-target.yml
+           diff qa-pr.yml qa-target.yml > changes.diff || true
       - run: cat changes.diff
       - name: comment PR
         uses: machine-learning-apps/pr-comment@master
