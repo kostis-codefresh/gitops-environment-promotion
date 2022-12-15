@@ -14,6 +14,7 @@ jobs:
   diff-env:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    container: k8s.gcr.io/kustomize/kustomize:v3.8.7
 
     steps:
       - name: Checkout PR
