@@ -60,10 +60,10 @@ components:
   - ../../variants/asia
 
 patches:
-- deployment.yml
-- version.yml
-- replicas.yml
-- settings.yml
+- path: deployment.yml
+- path: version.yml
+- path: replicas.yml
+- path: settings.yml
 ```
 
 First we define some common properties. We inherit all configuration from base, from non-prod environments and for all environments in Asia.

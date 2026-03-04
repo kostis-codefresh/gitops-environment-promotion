@@ -11,8 +11,8 @@ components:
   - ../../variants/non-prod
 
 patches:
-- deployment.yml
-- version.yml
-- settings.yml
+- path: deployment.yml
+- path: version.yml
+- path: settings.yml
 
 
