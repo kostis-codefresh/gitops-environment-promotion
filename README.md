@@ -59,7 +59,7 @@ components:
   - ../../variants/non-prod
   - ../../variants/asia
 
-patchesStrategicMerge:
+patches:
 - deployment.yml
 - version.yml
 - replicas.yml

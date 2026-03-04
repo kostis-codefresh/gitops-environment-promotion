@@ -10,7 +10,7 @@ resources:
 components:
   - ../../variants/non-prod
 
-patchesStrategicMerge:
+patches:
 - deployment.yml
 - version.yml
 - replicas.yml

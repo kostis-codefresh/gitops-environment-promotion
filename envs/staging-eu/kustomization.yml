@@ -11,7 +11,7 @@ components:
   - ../../variants/non-prod
   - ../../variants/eu
 
-patchesStrategicMerge:
+patches:
 - deployment.yml
 - version.yml
 - replicas.yml
